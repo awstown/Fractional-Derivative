@@ -1,0 +1,25 @@
+function soln = diffexplicit(n,k,M,fg,varG,fa,fb,varAB)
+%
+%
+%
+%
+%
+
+% Get the inline functions for initial distribution and BC.
+g = inline(fg, varG);
+a = inline(fa, varAB);
+b = inline(fb, varAB);
+
+%% Initialize
+h = 1/(n+1);
+s = k/h^2;
+t = 0;
+
+% We still need to get our first w vector
+i = 0:n+1;
+for j=1:n+2             % Obtain the initial distribution
+    w(j) = g(h*i(j));
+end
+
+soln = [w];
+

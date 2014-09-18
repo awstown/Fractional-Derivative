@@ -1,0 +1,16 @@
+Plan of Attack:
+
+
+Want to deliver:
+	1) Correctly documented and commented scripts along with all functions.
+		a. explicit01.m
+		b. explicit12.m
+		c. implicit01.m
+		d. mlf.m
+	2) Write Up Instructions
+	3) PPT Presentation
+		a. Have examples of explicit, implicit models versus exact solution.
+		b. different test cases
+		c. different initial conditions
+		d. show results
+		e. Talk about theory in the beginning

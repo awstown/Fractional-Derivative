@@ -1,0 +1,73 @@
+% I want to shift U(1,:) to the left and to the right... fuck yes!!!!
+U(1,:)l
+??? U(1,:)l
+          |
+{Error: Unexpected MATLAB expression.
+} 
+U(1,:);
+U(1,:)
+
+ans =
+
+  Columns 1 through 10
+
+         0    0.1564    0.3090    0.4540    0.5878    0.7071    0.8090    0.8910    0.9511    0.9877
+
+  Columns 11 through 20
+
+    1.0000    0.9877    0.9511    0.8910    0.8090    0.7071    0.5878    0.4540    0.3090    0.1564
+
+  Column 21
+
+    0.0000
+
+U_left = U(1,2:end)
+
+U_left =
+
+  Columns 1 through 10
+
+    0.1564    0.3090    0.4540    0.5878    0.7071    0.8090    0.8910    0.9511    0.9877    1.0000
+
+  Columns 11 through 20
+
+    0.9877    0.9511    0.8910    0.8090    0.7071    0.5878    0.4540    0.3090    0.1564    0.0000
+
+U_right = U_left; % sorry fucked up a little
+U_left = [0 U(1,1:end-1)]
+
+U_left =
+
+  Columns 1 through 10
+
+         0         0    0.1564    0.3090    0.4540    0.5878    0.7071    0.8090    0.8910    0.9511
+
+  Columns 11 through 20
+
+    0.9877    1.0000    0.9877    0.9511    0.8910    0.8090    0.7071    0.5878    0.4540    0.3090
+
+  Column 21
+
+    0.1564
+
+diary off
+% So Im about to run this code to see how much I have optimized it and it going to be sick!!!!
+
+
+
+%The first output is an algorithm that sum the same thing needlessly, and the second is the improvement of that!!!
+%Enjoy
+caputoDiscretization
+Elapsed time is 0.041829 seconds.
+% Lets try that again......
+caputoDiscretization
+Elapsed time is 5.193710 seconds.
+Elapsed time is 0.042527 seconds.
+.04 / 5.09
+
+ans =
+
+    0.0079
+
+% That is 100 times faster..... ha ha ha ha
+diary off

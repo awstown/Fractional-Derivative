@@ -1,0 +1,22 @@
+%% Huen's Method Eploration - Dwight Townsend - 06/2011
+% This Script is Huen's method it uses a predictor corrector method to
+% calculate the y_n+1 using Euler's method and then correcting it. To
+% derive it you shove the Euler approxiamtion into the midpoint
+% approximation. It's super cool how it does it.
+
+
+
+h = 0.1;   % Time step
+y0 = 1;    % Initial Condition
+T = 6;     % End Point
+n = T/h;   % Number of steps
+t(1) = 0;  % Initial Conditions
+y(1) = y0; 
+  for k = 1 : n
+       t(k+1) = t(k) + h;
+       % solve the implicit equation:
+       % y(k+1) = y(k) + h*(-t(k)*y(k)-t(k+1)*y(k+1))
+       y(k+1) = y(k)*(1-h*t(k))/(1 + h*t(k+1));  
+end
+yExact = exp(-t.^2); eLocal = abs(y-yExact);
+plot(t,yExact,'r',t,y,'*b',t,eLocal,':g'); 

@@ -1,0 +1,13 @@
+function [ sum ] = trackSum( U, m, fdorder, prevSum )
+%UNTITLED Summary of this function goes here
+%   Detailed explanation goes here
+if m == 1
+    sum = 
+    return;
+end
+    
+sum = prevSum + bcoeff(m,fdorder) .* (U(m,2:end-1) - U(m-1,2:end-1));
+
+
+end
+

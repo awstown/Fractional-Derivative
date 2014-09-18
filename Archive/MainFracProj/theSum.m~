@@ -1,0 +1,14 @@
+function [ sum ] = theSum(U, m, j, fdorder )
+%THESUM This calculates
+%   Detailed explanation goes here
+sum = 0;
+for k = 1:m
+    sum = sum + bcoeff(k,fdorder) * (U(m+1-k,j) - U(m-k,j));
+end
+
+end
+
+
+function c = bcoeff(k,fdorder)
+    c = (k+1)^(1-fdorder) - k^(1-fdorder);
+end

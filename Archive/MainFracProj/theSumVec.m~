@@ -1,0 +1,16 @@
+function [ sum ] = theSumVec(U, m, fdorder )
+%THESUM This calculates the sum in the last bit of the approximation
+%   You still need to add and conditional to account for the first step abd
+%  how it accounts for 0 time. fuck!!!!!
+if m == 1
+    sum = 0;
+    return
+end
+
+sum = 0;
+for k = m:-1:2
+    sum = sum + bcoeff(k,fdorder) .* (U(k,2:end-1) - U(k-1,2:end-1));
+end
+
+end
+
